@@ -1,0 +1,485 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <script src="{% static 'contact.js' %}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'homepage/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/css.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <style>
+      body{
+        background-image: url("{% static 'homepage/19366.jpg' %}");
+        background-attachment: fixed;
+        opacity: 0.93;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+        .brand img {
+            /* padding-top: 5px; */
+            height: 50%;
+            width: 50%;
+            /* border-radius: 50%; */
+            position: relative;
+            right: 10px;
+        }
+        
+        .brand a {
+            text-transform: uppercase;
+            position: relative;
+            bottom: 10px;
+        }
+        
+        .brand h6 {
+            font-size: 12px;
+            text-transform: lowercase;
+            position: relative;
+            bottom: 45px;
+            color: white;
+            left: 100px;
+            font-weight: lighter;
+        }
+        
+        .js-scroll {
+            opacity: 1;
+            transition: opacity 500ms;
+            position: relative;
+            top: 80px;
+        }
+        
+        .js-scroll.scrolled {
+            opacity: 1;
+        }
+        
+        .scroll-container {
+            /* height:80vh; */
+            /* box-sizing: border-box; */
+            /* flex-direction: column-reverse; */
+            justify-content: center;
+            animation-name: content;
+            animation-duration: 3s;
+        }
+        
+        .scroll {
+            display: flex;
+        }
+        
+        .box1 {
+            flex: 1;
+            /* flex-basis: 30%; */
+            position: relative;
+            left: 20px;
+            top: 30px;
+        }
+        
+        .box1 h1 {
+            text-align: center;
+            text-transform: capitalize;
+        }
+        
+        .box1 p {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 20px;
+            text-align: justify;
+            text-justify: inter-word;
+            position: relative;
+            left: 100px;
+            text-transform: capitalize;
+        }
+        
+        .box2 {
+            flex: 1;
+        }
+        
+        .box2 img {
+            position: relative;
+            width: 80%;
+            height: 100%;
+            right: 70px;
+            left: 20px;
+            /* border-radius: 5%; */
+        }
+        
+        .box2::after {
+            content: '';
+            position: absolute;
+            right: 100px;
+            top: 60px;
+            height: 90%;
+            width: 40%;
+            border: 8px solid rgb(44, 145, 119);
+            z-index: -1;
+        }
+        
+        .container-2 {
+            position: relative;
+            left: 70px;
+        }
+        
+        .container-1 h1 {
+            text-align: center;
+            top: 30px;
+        }
+        
+        .c1 {
+            float: left;
+            width: 33.3%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        .c1 span {
+            font-size: 20px;
+            position: relative;
+            right: 10px;
+            font-weight: lighter;
+            font-family: 'Segoe UI';
+        }
+        
+        .c1 h4 {
+            position: relative;
+            top: 210px;
+            right: 150px;
+        }
+        
+        .c1 img {
+            box-shadow: 0 0 20px #118568;
+            border-radius: 50%;
+            width: 50%;
+            height: 50%;
+        }
+        
+        .container {
+            animation-name: content;
+            animation-duration: 3s;
+        }
+        
+        @keyframes content {
+            0% {
+                transform: translateY(100px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        #footer .card-body {
+            background-image: linear-gradient(60deg, black 0%, black 100%);
+            margin-left: 2px;
+            margin-right: 15px;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: 0.25rem;
+            width: 100%;
+        }
+        
+        #footer .social-icon {
+            position: relative;
+            top: 20px;
+            display: flex;
+            margin-bottom: 20px;
+            /* left:100px; */
+        }
+        
+        #footer .social-item {
+            position: relative;
+            height: 60px;
+            width: 60px;
+            margin: 0 2px;
+            left: 530px;
+        }
+        
+        #footer .flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 3rem 0;
+            position: relative;
+            top: 20px;
+            right: 20px;
+            flex-wrap: wrap;
+        }
+        
+        #footer .flex a {
+            color: white;
+        }
+        
+        .footer-copyright a {
+            color: #118568;
+        }
+        
+        nav {
+            margin-top: 25px;
+        }
+
+        #footer ul{
+          list-style: none;
+        }
+        .nav-item .nav-link {
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="page-header mt-1 mb-1 ml-1 ">
+
+            <!-- <img  alt="doctor" src="{% static 'homepage/prophecy.png' %}"  class="img1">
+    <div class="h1"><h1>Prophecy</h1></div>
+    <i><h6>Smart Healthcare</h6></i> -->
+        </div>
+        <!--header logo name end-->
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #118568;">
+            <div class="brand">
+                <img alt="doctor" src="{% static 'homepage/Doctor@Home.png' %}" class="img1">
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+    <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto" style="font-size: 1.2rem;">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+
+
+
+                    {% if user.is_authenticated %} {% if user.patient %}
+
+                    <li class="nav-item ml-2">
+                        <li class="nav-link" href="{% url 'patient_ui' %}" style="color: rgb(91, 252, 50);">Hello, {{user.patient.name}}</li>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <a class="nav-link" href="{% url 'patient_ui' %}">Profile</a>
+                    </li>
+
+                    {% endif %} {% if user.doctor %}
+
+                    <li class="nav-item ml-2">
+                        <li class="nav-link" href="{% url 'doctor_ui' %}" style="color: rgb(91, 252, 50);">Hello, Dr. {{user.doctor.name}}</li>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <a class="nav-link" href="{% url 'doctor_ui' %}">Profile</a>
+                    </li>
+
+
+                    {% endif %} {% if user.is_superuser %}
+
+                    <li class="nav-item ml-2">
+                        <li class="nav-link" href="{% url 'admin_ui' %}" style="color: rgb(91, 252, 50);">Admin: {{user.username}}</li>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <a class="nav-link" href="{% url 'admin_ui' %}">Profile</a>
+                    </li>
+
+
+                    {% endif %}
+
+                    <li class="nav-item ml-2">
+                        <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#logout-modal" style="color: rgb(247, 190, 188);">Log out</button>
+
+                    </li>
+
+
+
+
+                    <!-- Small modal -->
+
+                    <div class="modal fade" id="logout-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4>Logout <i class="fa fa-lock"></i></h4>
+                                </div>
+                                <div class="modal-body"><i class="fa fa-question-circle"></i><span style="color: rgb(42, 187, 6);">{{user.patient.name}}</span>, Are you sure you want to log-off?</div>
+                                <div class="modal-footer"><a href="{% url 'logout' %}" class="btn btn-primary btn-block">Logout</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% else %}
+
+                    <li class="nav-item ml-2">
+                        <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg2">Signup</a>
+                    </li>
+                    <li class="nav-item ml-">
+                        <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Signin</a>
+                    </li>
+
+                    {% endif %}
+
+                </ul>
+            </div>
+        </nav>
+
+
+        <!-- Large modal -->
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <center>
+                        <h1>Sign-In As</h1>
+                    </center>
+                    <br><br>
+
+                    <center>
+                        <form>
+                            <div class="container mt-5 mb-5">
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="{% url 'sign_in_admin' %}">
+                                            <img alt="admin" src="{% static 'homepage/admin.png' %}" class="img">
+                                        </a>
+                                    </div>
+
+                                    <div class="col">
+                                        <a href="{% url 'sign_in_doctor' %}">
+                                            <img alt="doctor" src="{% static 'homepage/doctor.png' %}" class="img">
+                                        </a>
+                                    </div>
+
+                                    <div class="col">
+                                        <a href="{% url 'sign_in_patient' %}">
+                                            <img alt="patient" src="{% static 'homepage/patient.png' %}" class="img">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </center>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!--about section starts -->
+        <section class="scroll-container">
+            <div class="scroll element js-scroll">
+                <div class="box1">
+                    <h1>Our mission</h1>
+                    <p>It is taking so much time to visit the doctor eveytime, <br> our mission is to analyse your health and give instant consultation<br> on your health.</p>
+                </div>
+
+                <div class="box2">
+                    <img alt="patient" src="{% static 'homepage\414.jpg' %}" class="img">
+                </div>
+            </div>
+        </section>
+
+        <br><br><br><br><br><br><br><br>
+
+        <section class="container">
+            <div class="container-1">
+                <h1>Meet The Team</h1>
+            </div><br><br><br><br>
+            <div class="container-2">
+                <div class="c1">
+                    <img alt="team" src="{% static 'homepage\priya.jpg' %}" class="img">
+                    <h4>Founder<br><span>Priyanka Patil</span></h4>
+                </div>
+
+                <div class="c1">
+                    <img alt="team" src="{% static 'homepage\sneha1.jpg' %}" class="img">
+                    <h4>Founder<br><span>Sneha Patil</span></h4>
+                </div>
+
+                <div class="c1">
+                    <img alt="team" src="{% static 'homepage\ash1.jpg' %}" class="img">
+                    <h4>Founder<br><span>Ashwini Zende</span></h4>
+                </div>
+
+            </div>
+        </section>
+        <br><br><br><br>
+
+
+
+        <!-- Footer -->
+        <br><br><br><br><br><br><br><br><br><br>
+
+        <section id="footer">
+            <div class="footer container1">
+                <div class="card-body">
+                    <div class="social-icon">
+                        <div class="social-item">
+                            <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook.png" /></a>
+                        </div>
+                        <div class="social-item">
+                            <a href="https://www.instagram.com/ashish_abhale/"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" /></a>
+                        </div>
+                        <div class="social-item">
+                            <a href="#"><img src="https://img.icons8.com/color/48/000000/twitter--v1.png" /></a>
+                        </div>
+                        <div class="social-item">
+                            <a href="#"><img src="https://img.icons8.com/color/48/000000/behance.png" /></a>
+                        </div>
+                    </div>
+
+
+                    <ul class="flex">
+                        <li>
+                         
+                            <a class="nav-link" href="{% url 'about' %}">About</a>
+                        </li>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M78.83333,14.33333v143.33333h14.33333v-143.33333z"></path></g></g></svg>
+
+
+                        <li>
+                            {% comment %}
+                            <h5 class="mb-1">Contact no. 9078166555</h5> {% endcomment %}
+                            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        </li>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M78.83333,14.33333v143.33333h14.33333v-143.33333z"></path></g></g></svg>
+
+
+                        <li>
+                            <a class="nav-link" href="{% url 'home' %}">Signup</a>
+                        </li>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M78.83333,14.33333v143.33333h14.33333v-143.33333z"></path></g></g></svg>
+
+
+                        <li>
+                            <a class="nav-link" href="{% url 'home' %}">Signin</a>
+                        </li>
+                    </ul>
+
+                    <div>
+                        {% comment %}
+                        <h5 class="mb-1">Address: CET, bbsr</h5> {% endcomment %}
+                        <div class="footer-copyright text-center">© 2022 Copyright:
+                            <a href="#"> Doctor@Home.com</a>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- End Footer -->
+</body>
+
+</html>

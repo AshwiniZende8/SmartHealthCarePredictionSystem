@@ -1,0 +1,525 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <script src="{% static 'contact.js' %}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'homepage/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage/css.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+<style>
+        .brand img {
+            /* padding-top: 5px; */
+            height: 50%;
+            width: 50%;
+            /* border-radius: 50%; */
+            position: relative;
+            right: 10px;
+        }
+        
+        .brand a {
+            text-transform: uppercase;
+            position: relative;
+            bottom: 10px;
+        }
+        
+        .brand h6 {
+            font-size: 12px;
+            text-transform: lowercase;
+            position: relative;
+            bottom: 45px;
+            color: white;
+            left: 100px;
+            font-weight: lighter;
+        }
+        
+        nav {
+            margin-top: 25px;
+        }
+        /* Google Font CDN Link */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        body {
+            min-height: 100vh;
+            width: 100%;
+            /* background: #c8e8e9; */
+            background-image: url("{% static 'homepage\19366.jpg' %}");
+            background-attachment: fixed;
+            /* opacity: 5; */
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            width: 85%;
+            background: #fff;
+            border-radius: 6px;
+            padding: 20px 60px 30px 40px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+            position: relative;
+            top: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .container .content .left-side {
+            width: 25%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            position: relative;
+        }
+        
+        .content .left-side::before {
+            content: '';
+            position: absolute;
+            height: 70%;
+            width: 2px;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #afafb6;
+        }
+        
+        .content .left-side .details {
+            margin: 14px;
+            text-align: center;
+        }
+        
+        .content .left-side .details i {
+            font-size: 30px;
+            color: #118568;
+            margin-bottom: 10px;
+        }
+        
+        .content .left-side .details .topic {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .content .left-side .details .text-one,
+        .content .left-side .details .text-two {
+            font-size: 14px;
+            color: #afafb6;
+        }
+        
+        .container .content .right-side {
+            width: 75%;
+            margin-left: 75px;
+        }
+        
+        .content .right-side .topic-text {
+            font-size: 23px;
+            font-weight: 600;
+            color: #118568;
+        }
+        
+        .right-side .input-box {
+            height: 50px;
+            width: 100%;
+            margin: 12px 0;
+        }
+        
+        .right-side .input-box input,
+        .right-side .input-box textarea {
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background: #F0F1F8;
+            border-radius: 6px;
+            padding: 0 15px;
+            resize: none;
+        }
+        
+        .right-side .message-box {
+            min-height: 110px;
+        }
+        
+        .right-side .input-box textarea {
+            padding-top: 6px;
+        }
+        
+        .right-side .button {
+            display: inline-block;
+            margin-top: 12px;
+        }
+        
+        .right-side .button input[type="submit"] {
+            color: black;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background: #118568;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .button input[type="submit"]:hover {
+            background: #1fb690;
+        }
+        
+        @media (max-width: 950px) {
+            .container {
+                width: 90%;
+                padding: 30px 40px 40px 35px;
+            }
+            .container .content .right-side {
+                width: 75%;
+                margin-left: 55px;
+            }
+        }
+        
+        @media (max-width: 820px) {
+            .container {
+                margin: 40px 0;
+                height: 100%;
+            }
+            .container .content {
+                flex-direction: column-reverse;
+            }
+            .container .content .left-side {
+                width: 100%;
+                flex-direction: row;
+                margin-top: 40px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .container .content .left-side::before {
+                display: none;
+            }
+            .container .content .right-side {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+        
+        #status {
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            padding: 10px;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+        
+        #status.success {
+            background-color: rgb(211, 250, 153);
+            animation: status 4s ease forwards;
+        }
+        
+        #status.error {
+            background-color: rgb(250, 129, 92);
+            color: white;
+            animation: status 4s ease forwards;
+        }
+        
+        @keyframes status {
+            0% {
+                opacity: 1;
+                pointer-events: all;
+            }
+            90% {
+                opacity: 1;
+                pointer-events: all;
+            }
+            100% {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+        #footer .card-body{
+            background-color: black;
+            width:100%;
+          }
+          #footer ul{
+            list-style-type: none;
+            text-align: center;
+          }
+          
+          #footer .social-icon {
+              position: relative;
+              top:20px;
+              display: flex;
+              margin-bottom: 20px;
+            /* left:100px; */
+          }
+          #footer .social-item {
+            position: relative;
+            height: 60px;
+            width: 60px;
+            margin: 0 2px;
+            left:520px;
+          
+          }
+          #footer .flex{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 3rem 0;
+            position: relative;
+            top:20px;
+            right:20px;
+            flex-wrap: wrap;
+          }
+          #footer .flex a{
+            color: white;
+          }
+          .footer-copyright a{
+            color:#118568;
+          }
+          
+    </style>
+</head>
+
+
+<body>
+    <!--header logo name -->
+    <div class="container-fluid">
+
+        <div class="page-header mt-1 mb-1 ml-1 ">
+
+            <!-- <img  alt="doctor" src="{% static 'homepage/prophecy.png' %}"  class="img1">
+        <div class="h1"><h1>Prophecy</h1></div>
+        <i><h6>Smart Healthcare</h6></i> -->
+        </div>
+        <!--header logo name end-->
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #118568;">
+            <div class="brand">
+                <img alt="doctor" src="{% static 'homepage/Doctor@Home.png' %}" class="img1">
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto" style="font-size: 1.2rem;">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+
+
+
+                    {% if user.is_authenticated %} {% if user.patient %}
+
+                    <li class="nav-item ml-2">
+                        <li class="nav-link" href="{% url 'patient_ui' %}" style="color: rgb(91, 252, 50);">Hello, {{user.patient.name}}</li>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <a class="nav-link" href="{% url 'patient_ui' %}">Profile</a>
+                    </li>
+
+                    {% endif %} {% if user.doctor %}
+
+                    <li class="nav-item ml-2">
+                        <li class="nav-link" href="{% url 'doctor_ui' %}" style="color: rgb(91, 252, 50);">Hello, Dr. {{user.doctor.name}}</li>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <a class="nav-link" href="{% url 'doctor_ui' %}">Profile</a>
+                    </li>
+
+
+                    {% endif %} {% if user.is_superuser %}
+
+                    <li class="nav-item ml-2">
+                        <li class="nav-link" href="{% url 'admin_ui' %}" style="color: rgb(91, 252, 50);">Admin: {{user.username}}</li>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <a class="nav-link" href="{% url 'admin_ui' %}">Profile</a>
+                    </li>
+
+
+                    {% endif %}
+
+                    <li class="nav-item ml-2">
+                        <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#logout-modal" style="color: rgb(247, 190, 188);">Log out</button>
+
+                    </li>
+
+
+
+
+                    <!-- Small modal -->
+
+                    <div class="modal fade" id="logout-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4>Logout <i class="fa fa-lock"></i></h4>
+                                </div>
+                                <div class="modal-body"><i class="fa fa-question-circle"></i><span style="color: rgb(42, 187, 6);">{{user.patient.name}}</span>, Are you sure you want to log-off?</div>
+                                <div class="modal-footer"><a href="{% url 'logout' %}" class="btn btn-primary btn-block">Logout</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% else %}
+
+                    <li class="nav-item ml-2">
+                        <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg2">Signup</a>
+                    </li>
+                    <li class="nav-item ml-">
+                        <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Signin</a>
+                    </li>
+
+                    {% endif %}
+
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="content">
+                <div class="left-side">
+                    <div class="address details">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="topic">Address</div>
+                        <div class="text-one">Surkhet, NP12</div>
+                        <div class="text-two">Birendranagar 06</div>
+                    </div>
+                    <div class="phone details">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="topic">Phone</div>
+                        <div class="text-one">+0098 9893 5647</div>
+                        <div class="text-two">+0096 3434 5678</div>
+                    </div>
+                    <div class="email details">
+                        <i class="fas fa-envelope"></i>
+                        <div class="topic">Email</div>
+                        <div class="text-one">codinglab@gmail.com</div>
+                        <div class="text-two">info.codinglab@gmail.com</div>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="topic-text">Send us a message</div>
+                    <p>Qustions, bug report, feedback, feature report -- we're here for it all.</p>
+                    <form action="https://formspree.io/f/moqrwngp" method="POST" id="my-form">
+                        <div class="input-box">
+                            <input type="text" name="firstName" placeholder="Enter your name">
+                        </div>
+                        <div class="input-box">
+                            <input type="text" name="email" placeholder="Enter your email">
+                        </div>
+                        <div class="input-box">
+                            <input type="text" name="msg" placeholder="Enter your message">
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="status"></div>
+        </div>
+
+<br><br><br><br><br><br><br><br><br><br>
+<!--footer-->
+        <section id="footer">
+            <div class="footer container1">
+              <div class="card-body">
+                <div class="social-icon">
+                  <div class="social-item">
+                    <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook.png"/></a>
+                  </div>
+                  <div class="social-item">
+                    <a href="https://www.instagram.com/ashish_abhale/"><img src="https://img.icons8.com/color/48/000000/instagram-new.png"/></a>
+                  </div>
+                  <div class="social-item">
+                    <a href="#"><img src="https://img.icons8.com/color/48/000000/twitter--v1.png"/></a>
+                  </div>
+                  <div class="social-item">
+                    <a href="#"><img src="https://img.icons8.com/color/48/000000/behance.png"/></a>
+                  </div>
+                </div>
+        
+        
+                <ul class="flex">
+                    <li >
+                      {% comment %} <h5 class="mb-1">Email: anujpradhan208@gmail.com</h5> {% endcomment %}
+                       <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                      width="24" height="24"
+                      viewBox="0 0 172 172"
+                      style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M78.83333,14.33333v143.33333h14.33333v-143.33333z"></path></g></g></svg>
+        
+        
+                    <li > 
+                     {% comment %} <h5 class="mb-1">Contact no. 9078166555</h5> {% endcomment %}
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+        
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="24" height="24"
+                    viewBox="0 0 172 172"
+                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M78.83333,14.33333v143.33333h14.33333v-143.33333z"></path></g></g></svg>
+            
+        
+                    <li >
+                      <a class="nav-link" href="{% url 'home' %}">Signup</a>
+                    </li>
+        
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="24" height="24"
+                    viewBox="0 0 172 172"
+                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M78.83333,14.33333v143.33333h14.33333v-143.33333z"></path></g></g></svg>
+            
+        
+                    <li >
+                      <a class="nav-link" href="{% url 'home' %}">Signin</a>
+                    </li>
+                </ul>
+        
+                  <div>
+                      {% comment %} <h5 class="mb-1">Address: CET, bbsr</h5> {% endcomment %}
+                      <div class="footer-copyright text-center">© 2022 Copyright:
+                        <a href="#"> Doctor@Home.com</a>
+                      </div>
+                </div>
+            </div>
+          </section>
+          <!-- End Footer -->
+
+
+        <script src="{% static 'contact.js' %}"></script>
+</body>
+
+</html>
